@@ -1,0 +1,11 @@
+Its important to deploy resources across zones or even regions. This prevents you from having an infrastructure outage that affects all resources simultaneously.
+-zonal resource: this is a resource that is specific to a zone such as a virtual machine instance
+-regional resource: This is a resource that is specific to a region and spans over multiple zones, such as a static ip address.
+-global resource: This is a location independent resource, such as a virtual machine instance image.
+
+When latency is a crucial topic in your application it is very important to choose the zone or region closest to your point of service. For example, if the end users of a servce are located mostly in the west part of Europe, your service should be placed in that region or zone.
+
+you can list all cloud compute regions from your cloud shell:
+gcloud compute regions list
+gcloud compute zones list
+

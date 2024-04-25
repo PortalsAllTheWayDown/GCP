@@ -1,0 +1,4 @@
+When cloud users request a resource or service in GCP, they need to have a project to track resources and quota usage. GCP project are the basis for enabling and using GCP services.
+Inside a GCP project users must enable billing to monitor, maintain and address the costs of the GCP services running on the project itself.
+
+Projects are separate compartments and they are isolated from each other. GCP resources belong to exactly one project and they  cannot be shared across projects, except for shared VPC networks, which can be shared with other projects.
