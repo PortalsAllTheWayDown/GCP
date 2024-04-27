@@ -1,0 +1,22 @@
+Virtual Private Cloud(VPC) is a virtualized private network and data center. Compute resources, storage, and load balancers live within VPC inside the Google Cloud production network that belongs to a specific project. VPC is powered by Andromeda, the GCP network virtualization stack, which is fully distributed to avoid having a single point of failure. A VPC network provides the following:
+-Connectivity service for interconnected Compute Engine, Google Kubernetes Engine(GKE) clusters, and an App engine flexible environment.
+-Connectivity services to private on-premises networks using cloud VPN tunnels or cloud interconnect services.
+-Traffic distribution from Google Cloud load balancers and the backends running inside GCP.
+
+GCP projects can have multiple VPC networks that can contain several subnets for each region they cover.
+
+VPC networks logically seperate resources, even though they are in the same project. 
+Compute instances that stay in the same network can communicate with each other, even though they are in different regions without using public internet.
+Instances in the same regions but different networks cannot communicate with each other unless they pass through the public internet or VPC peering between the different VPC networks.
+
+VPC networks have the following properties:
+-Networks are global resources and do not belong to any region or zone. They are contained in one specific project and may span across all the available GCP regions.
+-Networks use subnets to logically group GCP resources in one region. Therefore, subnets are regional resources, and they span across zones.
+-Networks do not have any IP addresses assigned, while subnets do and they belong to private IPv4 ranges.
+-Routes and firewall rules are global resources, and they are associated with one network.
+-Firewall rules control the traffic to and from a virtual machine.
+-Networks only support IPv4 unitcastt traffic. Multicast, broadcast, or IPv6 traffic within the network are not supported.
+
+Two ways to create a VPC network within a GCP project:
+-Auto mode: The network has one subnet for each abailable region and default predefined firewall rules. The IP address range has a fixed /20 for each subnet thats created.
+-Custom mode: The network has no default preconfigure subnets and the user has full control over defining all the network resources, such as subnet IP ranges, firewalls, and routing configuration.

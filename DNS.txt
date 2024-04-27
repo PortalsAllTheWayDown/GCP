@@ -1,0 +1,18 @@
+Google offers three service that deal with DNS:
+-Internal DNS
+-Cloud DNS
+-Cloud Domain
+
+Internal DNS allows Compute Engine instances in the same VPC network to communicate via internal DNS names. Internal records for the virtual machine are created in the DNS zone for .internal domains. These records are automatically created, updated and removed by GCP, depending on the virtual machine life cycle.
+Moreover internal DNS is for the virtual machines primary internal IP address resolution and it cannot be used to resolve its public IP address, nor its private secondary IP address.
+
+Google recommends using zonal DNS to improve reliability.
+
+The fully qualified domain name (FQDN) for a compute engine instance has the follwing format: instanceName.zone.c.projectId.internal
+
+To avoid conflict with FQDNs. two comupte engine instances running in the same zone must have unique instance names.
+
+Cloud DNS is a Google managed service that allows us to publish domain names to the global DNS in a reliable cost effective and scalable way. Cloud DNS provides both public and private zones and lets the user publish DNS records without working about managing its DNS server.
+
+Public zones are visible globally, while private zones are visible to one or more specified VPC networks.
+

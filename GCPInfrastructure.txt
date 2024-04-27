@@ -9,3 +9,35 @@ you can list all cloud compute regions from your cloud shell:
 gcloud compute regions list
 gcloud compute zones list
 
+GCP hierarchy has two main functions inside GCP:
+-To manage a GCP project life cycle hierarchically inside one organization.
+-Organization and Identity and Access Management (IAM) policies can be applied for project and resource access control.
+
+Resources are grouped into projects, which may belong to a single folder or organization node.
+so it can look like.
+
+Organization node at top
+-Folders next
+    -Projects next
+        -Resources after
+
+Four virtual machine family types you can choose from:
+-General purpose: This category is for running generic workloads such as websites or customized databases.
+-Compute-optimized: This category is for running specific heavy CPU workload sucha as high performance computing(HPC) or single-threaded applications.
+-Memory-optimized: This category is for running specific heavy in-memory workloads such as large in memory databases or in-memory analytics applications.
+-GPU: This category is for running intensive workloads such as machine learning
+
+Predefines machine types let you choose a Compute Engine instance that has a predefined amount of vCPUs and RAM.
+Custom machine type allows you to select the vCPUs and RAM that are required for your workload.
+
+Three disk types:
+-Standard persistent disk: This is a magnetic hard disk drive that can have up to 7,500 IOPS in reading and 15,000 IOPS in writing operations.
+-Balanced persistent disk: This is the entry level solid state drive and can have up to 80,000 IOPS in both reading and writing operations.
+-SSD persistent disk: This is the second-level SSD and can have up to 100,000 IOPS in both reading and writing operations.
+
+Boot disks are the primary disks for a compute engine instance. Additionally, you can attach more disks to your virtual machine if you need extra space or for extremely high performane.
+
+There are three different encryption solutions that apply to all persistent disks of your virtual machine.
+-Google-managed key: This is the default encryption and it is enaled by default on all persistent disks. The encryption key is managed by Google and users do not have to worry about anything.
+-Customer-managed key: With this encryption method, the data is encrypted with a user key that is periodically rotated via Googles Key Management System(KMS) This GCP-managed service allows users to have their encryption keys and manage them inside the users project.
+-Customer-supply key: With this encryption method the data is encrypted with a user-supply key which is stored and managed outside the GCP users project.

@@ -1,0 +1,7 @@
+Google Cloud Load Balancing services are engineered on fully distributed and scalable infrastructure that uses software-defined networking to direct traffic to VPC networks. This helps avoid a single point of failure and allows traffic at scale.
+
+External Google Cloud LBs provide the following features:
+- a single external ip address as the frontend
+- Global or regional load balancing to reach your application from the internet
+- Internal load balancing
+- Layer 4 to Layer 7 load balancing
